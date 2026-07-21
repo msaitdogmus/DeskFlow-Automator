@@ -11,3 +11,6 @@ agreement.
 
 Build outputs, executables, local settings, audit files and machine-specific
 paths are excluded from version control.
+
+The published files are intended for technical review and portfolio evaluation,
+not as a drop-in replacement for the complete customer delivery.
