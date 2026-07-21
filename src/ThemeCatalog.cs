@@ -9,7 +9,8 @@ public sealed record ThemePalette(
 
 public static class ThemeCatalog
 {
-    // The desktop UI can change mood without changing information hierarchy.
+    // Every palette keeps the same semantic roles, so contrast and hierarchy
+    // remain predictable when the operator changes the visual theme.
     public static IReadOnlyDictionary<string, ThemePalette> All { get; } =
         new Dictionary<string, ThemePalette>
         {
