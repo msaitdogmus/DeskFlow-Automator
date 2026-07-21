@@ -1,5 +1,6 @@
 namespace DeskFlow.Portfolio;
 
+/// <summary>Lifecycle states exposed by the processing queue.</summary>
 public enum RecordState
 {
     Queued,
@@ -8,11 +9,13 @@ public enum RecordState
     Failed
 }
 
+/// <summary>An immutable record received from the configured source.</summary>
 public sealed record IncomingRecord(
     string Id,
     IReadOnlyDictionary<string, string> Fields,
     DateTimeOffset ReceivedAt);
 
+/// <summary>Maps one source field to its ordered desktop destination.</summary>
 public sealed record FieldMapping(string Source, string Target, int Order);
 
 public sealed record ProcessingResult(
@@ -22,6 +25,7 @@ public sealed record ProcessingResult(
     TimeSpan Duration,
     string Message);
 
+/// <summary>Keeps UI-specific write mechanics outside the queue policy.</summary>
 public interface IDesktopTarget
 {
     Task WriteAsync(
@@ -29,6 +33,7 @@ public interface IDesktopTarget
         CancellationToken cancellationToken);
 }
 
+/// <summary>Tracks committed IDs so retries remain idempotent.</summary>
 public interface ICommitLedger
 {
     bool Contains(string recordId);
