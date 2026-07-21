@@ -48,12 +48,14 @@ public sealed class RecordPipeline(
             new(record.Id, state, attempts, DateTimeOffset.UtcNow - started, message);
     }
 
+    // Order is preserved before the target adapter receives the fields.
     private IReadOnlyDictionary<string, string> Map(IncomingRecord record) =>
         mappings.OrderBy(item => item.Order).ToDictionary(
             item => item.Target,
             item => record.Fields[item.Source],
             StringComparer.OrdinalIgnoreCase);
 
+    // Validation fails before any desktop input can be emitted.
     private void Validate(IncomingRecord record)
     {
         if (string.IsNullOrWhiteSpace(record.Id))
