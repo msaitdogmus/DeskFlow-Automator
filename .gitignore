@@ -1,13 +1,18 @@
+# Build and publish output
 bin/
 obj/
 publish/
 artifacts/
+
+# Developer and runtime state
 *.user
 *.suo
 *.log
 *.jsonl
 settings.json
 committed-records.txt
+
+# Editor and operating-system files
 .idea/
 .vs/
 .vscode/
