@@ -3,7 +3,7 @@
 DeskFlow is a Windows data-entry automation project built around a simple rule:
 incoming records must be traceable, repeatable and safe to retry.
 
-![DeskFlow full layout](docs/deskflow-full.png)
+![DeskFlow full layout](docs/deskflow-dashboard.png)
 
 ## What it demonstrates
 
@@ -41,7 +41,7 @@ secondary preview collapses and the queue remains usable; at narrow widths the
 main work area takes priority. Settings panels scroll independently instead of
 being clipped.
 
-![DeskFlow half-screen layout](docs/deskflow-half.png)
+![DeskFlow half-screen layout](docs/deskflow-responsive.png)
 
 ## Ownership
 
