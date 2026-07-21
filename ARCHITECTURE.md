@@ -23,3 +23,8 @@ application.
 
 The full application adds an Avalonia desktop shell, editable mappings,
 metrics, audit export and responsive layouts for full, half and narrow windows.
+
+## Failure policy
+
+Validation errors stop before the target is touched. Transient write failures
+use bounded retries, while committed record IDs are skipped on later runs.
