@@ -4,5 +4,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <RootNamespace>DeskFlow.Portfolio</RootNamespace>
+    <AssemblyName>DeskFlow.Portfolio</AssemblyName>
+    <Description>Reviewable record-processing core from DeskFlow Automator.</Description>
+    <Version>1.1.0</Version>
   </PropertyGroup>
 </Project>
